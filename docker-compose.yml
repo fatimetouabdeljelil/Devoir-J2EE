@@ -1,0 +1,13 @@
+services:
+  app-server:
+    build: .
+    container_name: tp4_cdi_payara
+    environment:
+      - ADMIN_USER=admin
+      - ADMIN_PASSWORD=Admin#77
+      - AS_ADMIN_PASSWORD=Admin#77
+    ports:
+      - "8080:8080"
+      - "4848:4848"
+    volumes:
+      - ./target/tp4-cdi.war:/opt/payara/deployments/tp4-cdi.war
